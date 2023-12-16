@@ -10,16 +10,21 @@ with st.sidebar:
             label = "What is the pdf URL?",
             max_chars = 75
         )
-        df = st.sidebar.text_area(
-            label = "Provide a pandas dataframe of questions you would like answered about your video",
-            max_chars = 50,
-            key = 'df'
+        query = st.sidebar.text_area(
+            label = "Ask about the insurance form?",
+            max_chars = 75,
+            key = 'query'
         )
+        # context = st.sidebar.text_area(
+        #     label = "Provide basic info about the form being parsed:",
+        #     max_chars = 125,
+        #     key = 'context'
+        # )
 
         submit_button = st.form_submit_button(label = 'Submit')
 
-if df and pdf_url:
-    vector_db = lch.create_vector_db_from_pdf
-    response, docs = lch.get_response_from_query(vector_db, df)
-    st.subheader("Answer")
+if query and pdf_url:
+    db = lch.create_vector_db_from_pdf(pdf_url)
+    response = lch.get_response_from_query(db, query)
+    st.subheader("Answer: ")
     st.text(textwrap.fill(response, width = 80))

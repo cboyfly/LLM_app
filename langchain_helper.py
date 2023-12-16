@@ -21,7 +21,7 @@ def create_vector_db_from_pdf(pdf_url: str) -> FAISS:
 # url = 'https://hr.umich.edu/sites/default/files/uofm_cb_ppo_baag_2023.pdf'
 # print(create_vector_db_from_pdf(url))
 
-def get_response_from_query(vector_db, df: pd.DataFame):
+def get_response_from_query(db, query):
     model_name = "gpt-3.5-turbo-instruct"
     llm = OpenAI(model = model_name, temperature = 0)
 
@@ -36,9 +36,10 @@ def get_response_from_query(vector_db, df: pd.DataFame):
     """
 
     prompt = PromptTemplate(template = prompt_template, input_variables = ["question", "context"])
-    chain = RetrievalQA.from_llm(llm = llm, retriever=vector_db.as_retriever(), prompt=prompt)
+    chain = RetrievalQA.from_llm(llm = llm, retriever=db.as_retriever(), prompt=prompt)
 
-    return [chain.run({"query": question}) for question in df["question"]]
+    return chain.run({"query": query}
+)
 
 # def model_predict(df: pd.DataFrame):
 #     """Wraps the LLM call in a simple Python function.
@@ -49,3 +50,4 @@ def get_response_from_query(vector_db, df: pd.DataFame):
 #     return [chain.run({"query": question}) for question in df["question"]]
     
 
+#     return chain.run(question = query)
