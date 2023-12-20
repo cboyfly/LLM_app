@@ -1,6 +1,6 @@
-# Insurance Agent
+# Insurance Assistant
 
-Insurance Agent is a langchain RetrievalQA assistant designed to answer basic questions about insurance benefits forms. Utilizing OpenAI’s “gpt-3.5-turbo-instruct” as the base model, this assistant provides a user-friendly way to interpret and understand insurance documents.
+Insurance Assistant is a langchain RetrievalQA assistant designed to answer basic questions about insurance benefits forms. Utilizing OpenAI’s “gpt-3.5-turbo-instruct” as the base model, this assistant provides a user-friendly way to interpret and understand insurance documents.
 
 ## Description
 
