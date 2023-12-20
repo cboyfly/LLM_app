@@ -4,11 +4,11 @@ Insurance Assistant is a langchain RetrievalQA assistant designed to answer basi
 
 ## Description
 
-Insurance Agent allows users to upload their insurance benefits coverage form and ask various questions to gain clarity on their insurance plan's specifics. The project leverages advanced language model technology to deliver accurate and contextually relevant answers, making it easier for users to navigate the often confusing world of insurance paperwork.
+Insurance Assistant allows users to upload their insurance benefits coverage form and ask various questions to gain clarity on their insurance plan's specifics. The project leverages advanced language model technology to deliver accurate and contextually relevant answers, making it easier for users to navigate the often confusing world of insurance paperwork.
 
 ## Installation
 
-To set up the Insurance Agent on your local machine, follow these steps:
+To set up the Insurance Assistant on your local machine, follow these steps:
 
 1. Clone the repository to your local machine.
 2. Install the required packages:
@@ -31,4 +31,4 @@ Giskard uses LLM-assisted detectors for evaluating the effectiveness and accurac
 python giskard_eval.py
 
 
-Insurance Agent is currently in development. 
+Insurance Assistant is currently in development. 
